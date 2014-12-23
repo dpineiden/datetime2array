@@ -28,7 +28,7 @@ function datetime2array($dates_in,$options){
     $fecha1_obj->sub($intervalo);
 //crear date hace un mes
 //crear DateTime de hace un mes
-    $fecha1_timestamp=$hace_un_mes->getTimestamp();
+    $fecha1_timestamp=$fecha1_obj->getTimestamp();
     $array_fecha1=getdate($fecha1_timestamp);
   }
   else{
