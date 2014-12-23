@@ -1,0 +1,38 @@
+<?php
+
+//$dates_in is an array with date0 and date1 in Datatime object
+//$options is an array with the values to set the date.
+function datetime2array($dates_in,$options){
+  $modo=$options[0];
+  $tipo=$options[1];
+  $cantidad=$options[2];
+  //obtener fechas
+  $date1=$dates_in[0];
+  $date2=$dates_in[1];
+  //Si modo es 1 entonces recoger ambas fechas y convertir a array
+  //si modo es 2, entonces hay que calcular la primera fecha, luego convertir a array
+  //Entonces, es necesario verificar si es 1, 2 u otro valor
+  //Luego tomar las fechas conseguidas y generar el array
+  if ($modo == 1){
+    $timestamp_fecha1=$date1->getTimestamp();
+    $array_fecha1=getdate($timestamp_fecha1);
+    $timestamp_fecha2=$date2->getTimestamp();
+    $array_fecha2=getdate($timestamp_fecha2);
+  }
+  elseif ($modo == 2){
+    $timestamp_fecha2=$date2->getTimestamp();
+    $array_fecha2=getdate($timestamp_fecha2);      
+    $intervalo=new DateInterval('P'.$cantidad.'D');
+    $dias_intervalo=$intervalo->format('%d días');
+    $fecha1_obj->sub($intervalo);
+//crear date hace un mes
+//crear DateTime de hace un mes
+    $fecha1_timestamp=$hace_un_mes->getTimestamp();
+    $array_fecha1=getdate($fecha1_timestamp);
+  }
+  else{
+    echo "No hay modo de selección para fechas";
+  }  
+  return array($array_fecha1,$array_fecha2);
+  //retornar el arreglo
+}
