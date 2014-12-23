@@ -24,6 +24,7 @@ function datetime2array($dates_in,$options){
     $array_fecha2=getdate($timestamp_fecha2);      
     $intervalo=new DateInterval('P'.$cantidad.'D');
     $dias_intervalo=$intervalo->format('%d días');
+    $fecha1_ob=$date2;
     $fecha1_obj->sub($intervalo);
 //crear date hace un mes
 //crear DateTime de hace un mes
