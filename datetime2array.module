@@ -16,9 +16,9 @@ function datetime2array($dates_in,$options){
   //Luego tomar las fechas conseguidas y generar el array
   if ($modo == 1){
 $segundos=$date1->format('s');
-$minutos=$date1->format('s');
-$horas=$date1->format('H');
-$dia_mes=$date1->format('d');
+$minutos=$date1->format('i');
+$horas=$date1->format('G');
+$dia_mes=$date1->format('j');
 $dia_semana=$date1->format('w');
 $mes=$date1->format('m');
 $year=$date1->format('Y');
@@ -40,9 +40,9 @@ $time_stamp_1= $date1->getTimestamp();
            0 =>$time_stamp_1,
 );
 $segundos=$date2->format('s');
-$minutos=$date2->format('s');
-$horas=$date2->format('H');
-$dia_mes=$date2->format('d');
+$minutos=$date2->format('i');
+$horas=$date2->format('G');
+$dia_mes=$date2->format('j');
 $dia_semana=$date2->format('w');
 $mes=$date2->format('m');
 $year=$date2->format('Y');
